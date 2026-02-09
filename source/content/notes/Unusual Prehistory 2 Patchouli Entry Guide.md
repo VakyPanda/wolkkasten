@@ -117,7 +117,7 @@ This is all information for organising and displaying the page within the contex
 	- `Eggs must be &fThrown to hatch`
 	- `Eggs must be &fPlaced on Water to hatch`
 	- `Eggs must be &fPlaced down to hatch`
-	- `Embryos must be &fPlaced in Organic Ooze to gestate. 
+	- `Embryos must be &fPlaced in Organic Ooze to gestate.`
 - add parallel icon for diet?
 	- `Herbivorous`
 	- `Carnivore`
