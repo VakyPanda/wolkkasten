@@ -132,3 +132,6 @@ This is all information for organising and displaying the page within the contex
 	- `Nocturnal`
 	- `Crepuscular`
 	- `Cathemeral`
+- MYA for the era blurb maybe 
+- diorama of symbols over the era blurb instead of the clock 
+	- or a bigger clock. 
