@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  THEME_NAME: primary
+  THEME_NAME: tokyo-night
 
 jobs:
   build-and-test:
@@ -31,12 +31,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm install
+      - name: Install Dependencies
+        run: npm install
         working-directory: ./source
 
       - name: chmod
         run: chmod +x ./quartz/bootstrap-cli.mjs
         working-directory: ./source
+
+      - name: Fetch Quartz Theme
+        run: curl -s -S https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh | bash -s -- $THEME_NAME
+        working-directory: ./source/quartz
 
       - name: Ensure Quartz builds
         run: npx quartz build --bundleInfo
@@ -62,13 +67,16 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ./source
+
       - name: Fetch Quartz Theme
         run: curl -s -S https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh | bash -s -- $THEME_NAME
+        working-directory: ./source/quartz
 
       - name: Build Quartz
-        run: |
-          npm install
-          npx quartz build
+        run: npx quartz build
         working-directory: ./source
 
       - name: Copy raw HTML folder
