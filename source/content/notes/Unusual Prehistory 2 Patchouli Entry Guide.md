@@ -1,6 +1,85 @@
 Hi. You want to write entries for the UP2 patchouli book. 
 Written by @vakypanda on discord. Ping me for questions. 
-# Overview
+
+# Copy-And-Paste
+
+A few notes
+- when naming eras, you do "Late Creataceous __Period__" However, when doing TWO eras, you do "Late Cretaceous __into__ Early Cenozoic __Period__" 
+- Periods are split into 
+	- precambrian*, cambrian, ordovician, silurian, devonian, carboniferous, permian, triassic, jurassic, cretaceous, cenozoic, holocene*
+	- everything without a `*` on the list above have a late and early variant, so `late_permian` that can be used for one-era mobs
+	- if the mob has two eras, its `era_image` should be the mob id itself (so `carnotaurus`) - i will make the image seperately 
+- some mobs have species variants ( eg; Lobe finned fish ). Look at their render in the files if you have access to those - theyre numbered! These "numbers" go in "Variant Key"; 
+(diplocaulus)
+```json
+"variant_key": "1 brevirostris 2 magnicornis 3 recurvartis 4 salamandroides",
+```
+(jawless fish)
+```json
+"variant_key": "1 Doryaspis 2 Cephalaspis 3 Arandaspis 4 Sacabambaspis 5 Furcacauda",
+```
+
+### Activity
+
+```json
+"activity.activity_type": "diurnal",  
+"activity.activity_tooltip": "Active during the day"
+```
+
+```json
+"activity.activity_type": "nocturnal",  
+"activity.activity_tooltip": "Active during the night"
+```
+
+```json
+"activity.activity_type": "cathemeral",  
+"activity.activity_tooltip": "Active randomly throughout the day or based on specific factors"
+```
+
+```json
+"activity.activity_type": "crepuscular",  
+"activity.activity_tooltip": "Active at dusk or dawn"
+```
+
+### Cloning ("Hatching")
+
+Placeable Egg
+```json
+"clone.clone_type": "nest_egg",  
+"clone.clone_tooltip_heading": "Nest Egg",  
+"clone.clone_tooltip": "Egg must be placed down to hatch",
+```
+
+Throwable Egg
+```json
+"clone.clone_type": "projectile_egg",  
+"clone.clone_tooltip_heading": "Projectile Egg",  
+"clone.clone_tooltip": "Egg must be thrown to hatch",
+```
+
+Underwater Egg
+```json
+"clone.clone_type": "aquatic_egg",  
+"clone.clone_tooltip_heading": "Aquatic Egg",  
+"clone.clone_tooltip": "Egg must be placed underwater to hatch",
+```
+
+Floating Egg
+```json
+"clone.clone_type": "raft_egg",  
+"clone.clone_tooltip_heading": "Raft Egg",  
+"clone.clone_tooltip": "Egg must be placed on-top of water to hatch",
+```
+
+Embryo
+```json
+"clone.clone_type": "embryo",  
+"clone.clone_tooltip_heading": "Embryo",  
+"clone.clone_tooltip": "Embryo must be placed in §aLiving Ooze§r §7to gestate",
+```
+
+# OUTDATED ILL WRITE A NEW ONE SOON 
+## Overview
 The guide is to make sure formatting is kept consistent. I've tried to make the process of adding new entries super easy, so the json file youll see for any mob's entry is very short and requires some basic information to be filled.
 
 Some variables have to be left blank in certain cases. Here's what that looks like;
@@ -11,7 +90,7 @@ Some variables have to be left blank in certain cases. Here's what that looks li
 
 
 Entries are located under `src/main/resources/assets/unusual_prehistory/patchouli_books/paleopedia/en_us/entries/mobs`. Best you clone the github repository for the indev update before you start. If not just write the jsons down seperately, but remember that can make it unnecessarily difficult to weed out issues. Optionally get a beta from someone and make a resourcepack (or ask me and ill make it for you) and use that to edit the entries. Variables are the parts of the entry youll be changing for your page. 
-# Variables
+## Variables
 
 ![[2026-02-10_01.51.26.png]]
 
@@ -108,30 +187,9 @@ This is all information for organising and displaying the page within the contex
 		*The red area represents the area the render can actually fit into, which is 200x200 pixels.*
 	3. Try to take renders in a dynamic pose. Since there is a lot of compression at this size, for big mobs (like a sauropod or an icthyosaur) I'd suggest taking the render such that the head of the mob is quite large and near the camera, while the rest of the mob is in the distance but distorted and smaller. Try to not cut off mobs, it clashes with the style of the entries. 
 
-
 # Future 
-- add the text and feature pages
-- add hyperlinks to the book for eras -> specific fossil
-- add hyperlinks to the book for hatching eggs -> egg hatching / gestation process
-- add parallel icon to temperament for;
-	- `Eggs must be &fThrown to hatch`
-	- `Eggs must be &fPlaced on Water to hatch`
-	- `Eggs must be &fPlaced down to hatch`
-	- `Embryos must be &fPlaced in Organic Ooze to gestate.`
-- add parallel icon for diet?
-	- `Herbivorous`
-	- `Carnivore`
-	- `Omnivore`
-	- `Piscivore`
-	- `Insectivore`
-	- `Nectarivore`
-	- `Scavenger`
-	- `Planktivore`
-- add parallel icon for activity?
-	- `Diurnal`
-	- `Nocturnal`
-	- `Crepuscular`
-	- `Cathemeral`
-- MYA for the era blurb maybe 
-- diorama of symbols over the era blurb instead of the clock 
-	- or a bigger clock. 
+- [ ] add the text and feature pages
+- [ ] add hyperlinks to the book for eras -> specific fossil
+- [ ] add hyperlinks to the book for hatching eggs -> egg hatching / gestation process
+- [ ] add parallel icon to temperament for;
+- [ ] MYA for the era blurb maybe 
