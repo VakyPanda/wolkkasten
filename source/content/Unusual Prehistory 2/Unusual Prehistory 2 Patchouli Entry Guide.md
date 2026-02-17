@@ -9,7 +9,7 @@ A few notes
 	- precambrian*, cambrian, ordovician, silurian, devonian, carboniferous, permian, triassic, jurassic, cretaceous, cenozoic, holocene*
 	- everything without a `*` on the list above have a late and early variant, so `late_permian` that can be used for one-era mobs
 	- if the mob has two eras, its `era_image` should be the mob id itself (so `carnotaurus`) - i will make the image seperately 
-- some mobs have species variants ( eg; Lobe finned fish ). Look at their render in the files if you have access to those - theyre numbered! These "numbers" go in "Variant Key"; 
+- some mobs have species variants ( eg; Lobe finned fish ). Look at their render in [the GitHub Assets](https://github.com/platypushasnohat/Unusual-Prehistory-2/tree/main/src/main/resources/assets/unusual_prehistory/textures/gui/paleopedia) if you have access to those - theyre numbered! These "numbers" go in "Variant Key"; 
 (diplocaulus)
 ```json
 "variant_key": "1 brevirostris 2 magnicornis 3 recurvartis 4 salamandroides",
