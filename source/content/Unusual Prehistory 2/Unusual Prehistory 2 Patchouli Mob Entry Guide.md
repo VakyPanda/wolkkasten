@@ -131,7 +131,6 @@ After this comes
 2. Drops or interactions 
 3. Special Behaviours 
 #### On Renders
-- NEEDS VARIANT KEY AND LARGE MOB HANDLING 
 - When renders are being put in the `unusual_prehistory:textures/gui/paleopedia/images/` folder, there are a few things to remember
 	1. The image must be `256x256` in dimension
 	2. The actual **RENDER** must be WITHIN THE TOP LEFT `200x200` pixels. This is MANDATORY or else your render WILL get cut off;
