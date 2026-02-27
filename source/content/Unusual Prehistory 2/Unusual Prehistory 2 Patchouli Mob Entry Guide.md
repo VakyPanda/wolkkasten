@@ -126,8 +126,10 @@ This is all information for organising and displaying the page within the contex
 - When renders are being put in the `unusual_prehistory:textures/gui/paleopedia/images/` folder, there are a few things to remember
 	1. The image must be `256x256` in dimension
 	2. The actual **RENDER** must be WITHIN THE TOP LEFT `200x200` pixels. This is MANDATORY or else your render WILL get cut off;
+
 		![[megalania_render_red.png]]
-		*The red area represents the area the render can actually fit into, which is 200x200 pixels.*
+
+		(*The red area represents the area the render can actually fit into, which is 200x200 pixels.*)
 	3. Try to take renders in a dynamic pose. Since there is a lot of compression at this size, for big mobs (like a sauropod or something like aegirocassis) I'd suggest taking the render such that the head of the mob is quite large and near the camera, while the rest of the mob is in the distance but distorted and smaller. Try to not cut off mobs, it clashes with the style of the entries. 
 	4. some mobs have species variants ( eg; Lobe finned fish ). Look at their render in [the GitHub Assets](https://github.com/platypushasnohat/Unusual-Prehistory-2/tree/main/src/main/resources/assets/unusual_prehistory/textures/gui/paleopedia) if you have access to those - theyre numbered! These "numbers" go in the `variant_key` section of the entry. 
 
