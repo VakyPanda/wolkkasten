@@ -2,13 +2,16 @@ Hi. You want to write entries for the UP-2 patchouli book.
 Written by @vakypanda on discord. Ping me for questions. 
 ## Overview
 
-- **Entry** - a json file, containing all the information for the specific mob's entry in the book
-- **Page** - the page on the book, it has set templates that can be assigned at the highest level of the entry
-- **Variables** - the values you will be editing for each given creature. Some variables have to be left blank in certain cases. You should remove that line entirely.
+### Structure
+- **Entry** → A JSON file containing all data for one mob.
+- **Page** → A template section within the entry.
+- **Variables** → Editable fields within each page.
 
-The guide is to make sure formatting is kept consistent. I've tried to make the process of adding new entries super easy, so the json file youll see for any mob's entry is very short and requires some basic information to be filled.
+All entries are located at: 
+`src/main/resources/assets/unusual_prehistory/patchouli_books/paleopedia/en_us/entries/mobs`
 
-All Entries are located under `src/main/resources/assets/unusual_prehistory/patchouli_books/paleopedia/en_us/entries/mobs`. Best you clone the github repository for the indev update before you start. If not just write the jsons down seperately, but remember that can make it unnecessarily difficult to weed out issues. Optionally get a beta from someone and make a resourcepack (or ask me and ill make it for you) and use that to edit the entries.  
+It is strongly recommended to clone the indev GitHub repository before editing.  
+Editing files separately increases the risk of formatting or ID errors.
 ## Entry JSON
 
 ![[carnotaurus_page.png]]
@@ -64,13 +67,22 @@ All Entries are located under `src/main/resources/assets/unusual_prehistory/patc
 }
 ```
 
-Here's the json for the carnotaurus, subject to change. Let's walk through it step-by-step. 
+## High-Level Fields 
+#### `name` 
+Name displayed on the Category page. Should be Title Case (so `Carnotaurus` or `Lobe-Finned Fish`)
 
-1. `name` is the name displayed on the Category page. This is the name you see when you look at all the dinosaur pages under the "mobs" section in the book. **Title Case**.
-2. `icon` is the icon of the mob. These should be located under `"unusual_prehistory:textures/gui/paleopedia/icons/[mob].png` (eg: `carnotarus.png` ). If an icon is missing, ping and ask me or someone else on discord. ALL the icons are located on the Barl-Inc-Assets github, alongside a aseprite sheet of the icons that may be missing. *This is a change I (vaky) made as of 2.0 cause I think its a bit cleaner than the egg sprites and also showcases the era colors better. 
-3. `category` do not change this, should always be `unusual_prehistory:mobs`
-4. `advancement` self-explanatory, will just be eg; `unusual_prehistory:revive_dunkleosteus`
-5. `extra_recipe_mappings` gives all the items that should link to this page in the patchouli book. It generally contains the egg, fossil and spawn egg of a mob. *The number is the page number, 0 means first page, 1 means second, and so forth. Keep it as 0.* 
+#### `icon`
+Icons are located under `"unusual_prehistory:textures/gui/paleopedia/icons/[mob].png` (eg: `carnotarus.png`)
+
+#### `category`
+Don't edit this variable 
+
+#### `advancement`
+Uses advancement ID, structure is `unusual_prehistory:revive_x` (eg; `unusual_prehistory:revive_lobe_finned_fish`
+
+#### `extra_recipe_mappings`
+All items that will allow you to quick-check this specific page from your inventory. Should be item IDs of the spawn egg, fossil and egg. The number corresponds to page number, keep it as `0`
+
 ```json
 "extra_recipe_mappings": {  
     "unusual_prehistory:fury_fossil": 0,  
@@ -81,68 +93,82 @@ Here's the json for the carnotaurus, subject to change. Let's walk through it st
 
 This is all information for organising and displaying the page within the context of the patchouli book. Next is the actual entry, under `pages`. Each page has a `type`, and there are 3-4 types you can use for a mob entry:
 
-1. `unusual_prehistory:mob_entry_1` this is the page that contains the render 
-	1. `display_name` is identical to `name`
-	2. `id` is the id of the mob, which you can see in-game using `F3+H`. **OMIT THE `unusual_prehistory:` PART**. Eg; `unusual_prehistory:lobe_finned_fish` becomes `lobe_finned_fish`
-	3. `flavor text` english translation of the animals name. If there is none (eg; Lobe Finned Fish) **remove this line entirely**.
-	4. `fossil_item` self explanatory. Use `F3+H` to see the fossil item id in-game. Have JEI installed if you do not know what fossil makes what dinosaur - the transmogrifier recipes are JEI compatible. In this case, do NOT leave out `unusual_prehistory:` from the name
-	5. `egg_item` same as `fossil_item` but for eggs instead
-	6. `variant_key` part of the tooltip that appears when you hover over the render, for numbered renders. Capitalised names for Genera, simple names for species. Each is seperated by the number on the render ( see the renders section ) 
-		Dunkleosteus variants are species:
-		`"variant_key": "1 raveri 2 marsaisi 3 terrelli",`
-		Lobe Finned Fish variants are genera 
-		`"variant_key": "1 Allenypterus 2 Scaumenacia 3 Laccognathus 4 Eusthenopteron 5 Gooloongia",`
-	7. `image_tooltip` this is a small blurb that appears when you hover your mouse over the animals render. Feel free to write what you want, but keep it brief yet descriptive, and fun! 
-	8. See the section below **On Renders** to understand how the renders in the assets should be structured if you're doing those too. 
+## Page Types
 
-2. `unusual_prehistory:mob_entry_2` this is the page that contains info on era, behaviour and the first feature blurbs
-	1. `era_image` the mod will come with built in eras as follows; 
-		1. `early`, `mid`, and `late` for
-		2. `cambrian`, `ordovician`, `silurian`, `devonian`, `carboniferous`, `permian` `triassic`, `jurassic`, `cretaceous`, `cenozoic`. You can therefore build `late_cretaceous`, `early_cenozoic` etc. 
-		3. `precambrian` and `holocene` will have one image each ( no late and early )
-		4. ON TOP OF THIS we will probably have to do a few custom era images for certain mobs that cross over multiple eras. You'll have to look up their texture in the eras folder, it is the same as their name (so `carnotaurus.png`. If this texture doesn't exist, ask me to make it (@vakypanda). You can also look at the aseprite file within the same folder and see how the multi-era files are set-up and do it yourself - its up to you!  `unusual_prehistory:textures/gui/paleopedia/eras/`
-	2. `era_tooltip_period` refers to the tooltip you see when you hover over the era image. There are two possibilities;
-		1. eg; `Late Cretaceous Period` or `Holocene Epoch` - one period mobs
-		2. eg; `Late Cretaceous into the Early Cenozoic Period` - two or more period mobs. Earliest to latest period. Take note of **"into the"** here. 
-	3. `temperament.temperament_type` can be `hostile`, `passive`, `neutral
-	4. `clone.clone_type`, `clone.clone_tooltip_heading` and `clone.clone_tooltip` are a set of values which have fixed formatting and **MUST BE COPIED FROM [HERE](#COPY-AND-PASTE)**. The 'clone' values just mean how the mob is hatched - via egg, embryo, aquatic egg, etc
-	5. The same goes for `activity.activity_type` and `activity.activity_tooltip`, which go over the daily activity of the specific mob (diurnal, nocturnal, etc)
+1. `unusual_prehistory:mob_entry_1`: page with render
+2. `unusual_prehistory:mob_entry_2`: page with behaviours and 3 features 
+3. `unusual_prehistory:mob_entry_features`: page with 4 features 
+4. `unusual_prehistory:mob_entry_text`: page with one long text-wall 
 
-[[#Feature Writing]] has it's own separate section 
-## Feature Writing 
+---
+### `unusual_prehistory:mob_entry_1`
 
-1. `feature_x.item` where x can be `1`, `2` or `3`. These feature-related variables dictate the little feature blurbs and what they show. `feature_x_item` can contain a vanilla or UP2 item id, grabbed the same way as the fossil and egg items were. The item should be related to what the feature being described is, ideally the item is directly related to the mob and if not it is related by concept or feel. 
-2. `feature_x.tooltip` should be a descriptive blurb about the feature and all its relevant uses. The entire section is formatted gray and you MUST use `§a` before any key-words or items or mob names - this will highlight the word in *green*. After the key-word, add `§7` to turn the text following it back to gray. Example; "`§7After being §apacified§r, §7Carnotaurus will continue to attack most monsters"`. 
-![[carnotaurus_page_tooltip_1.png]]
-![[carnotaurus_page_tooltip_2.png]]
+#### `display_name` 
+Identical to `name
 
-3. `feature_x.one_line` this is the 'title' of the blurb - its short and punchy. Can be monotone if you want - "Breeding" for example. Up to you. 
-4. `feature_x.two_line` the difference between this and the above is simply splitting the title into two lines instead of one. If you find your `one_line` title is getting too long and being automatically moved to the next line, move your title here and leave `one_line` empty. This is because the `two_line` title has specific alignment to make it look good. [[#But what features should I document?]]
-#### But what features should I document? 
-1. Breeding is an important one - Holocene mobs have it
-2. Drops or interactions 
-3. Special Behaviours 
-## On Renders
-- When renders are being put in the `unusual_prehistory:textures/gui/paleopedia/images/` folder, there are a few things to remember
-	1. The image must be `256x256` in dimension
-	2. The actual **RENDER** must be WITHIN THE TOP LEFT `200x200` pixels. This is MANDATORY or else your render WILL get cut off;
+#### `id` 
+id of the mob, without `unusual_prehistory:` prefix. Example; `unusual_prehistory:lobe_finned_fish` -> `lobe_finned_fish`
 
-		![[megalania_render_red.png]]
+#### `flavor_text`
+English translation of animal name. If there is none (such as mobs like Manipulator and Lobe Finned Fish) remove the line entirely
 
-		(*The red area represents the area the render can actually fit into, which is 200x200 pixels.*)
-	3. Try to take renders in a dynamic pose. Since there is a lot of compression at this size, for big mobs (like a sauropod or something like aegirocassis) I'd suggest taking the render such that the head of the mob is quite large and near the camera, while the rest of the mob is in the distance but distorted and smaller. Try to not cut off mobs, it clashes with the style of the entries. 
-	4. some mobs have species variants ( eg; Lobe finned fish ). Look at their render in [the GitHub Assets](https://github.com/platypushasnohat/Unusual-Prehistory-2/tree/main/src/main/resources/assets/unusual_prehistory/textures/gui/paleopedia) if you have access to those - theyre numbered! These "numbers" go in the `variant_key` section of the entry. 
+#### `fossil_item`
+Item ID of the fossil used to revive the creature
 
-# Copy-And-Paste 
-## Cloning 
-Placeable Egg (mostly for reptiles and non-avian dinosaurs)
+#### `egg_item`
+Item ID of the egg that is obtained from the fossil
+
+#### `image_tooltip`
+Short blurb that appears when the player hovers over the animal render. Keep it concise. 
+
+#### `variant_key`
+Part of the image tooltip, for mobs with variants that are based on species or genera. The numbers are written on the render. 
+- Species are not capitalised, Eg (Dunkleosteus); `"variant_key": "1 raveri 2 marsaisi 3 terrelli",`
+- Genera are capitalsied, Eg (Lobe Finned Fish); `"variant_key": "1 Allenypterus 2 Scaumenacia 3 Laccognathus 4 Eusthenopteron 5 Gooloongia",`
+
+---
+### `unusual_prehistory:mob_entry_2
+#### `era_image`
+Has to be prefixed with `early_`, `mid_` or `late_`, Eg; `late_cretaceous`, `early_cenozoic`, `mid_ordovician`
+Valid eras are;
+- `cambrian`
+- `ordovician`
+- `silurian`
+- `devonian`
+- `carboniferous`
+- `permian`
+- `triassic`
+- `jurassic`
+- `cretaceous`
+- `cenozoic`
+- `holocene`*
+- `precambrian`*
+\*These have NO `early_`, `mid_` or `late` prefixes
+
+Some mobs have large existences over many eras or long periods of time. They should have custom era images, and the era image field should just be identical to `id` (so `carnotaurus` or `lobe_finned_fish`)
+
+#### `era_tooltip_period`
+Tooltip the player sees when they hover over the era image - 
+- Can be one-era, Eg;`Late Cretaceous Period` or `Holocene Epoch`
+- Can be two-era, Eg; `Late Cretaceous Period into the Holocene Epoch`
+	- Take note of "into the" here
+
+#### `temperament.temperament_type` 
+Valid values are 
+- `hostile`
+- `passive`
+- `neutral`
+
+#### `clone.clone_type`, `clone.clone_tooltip` & `clone.clone_tooltip_heading`
+
+Place-able Egg (mostly for reptiles and non-avian dinosaurs)
 ```json
 "clone.clone_type": "nest_egg",  
 "clone.clone_tooltip_heading": "Nest Egg",  
 "clone.clone_tooltip": "Egg must be placed down to hatch",
 ```
 
-Throwable Egg (for avians mostly)
+Throw-able Egg (for avians mostly)
 ```json
 "clone.clone_type": "projectile_egg",  
 "clone.clone_tooltip_heading": "Projectile Egg",  
@@ -170,31 +196,94 @@ Embryo (mostly for mammals)
 "clone.clone_tooltip": "Embryo must be placed in §aLiving Ooze§r §7to gestate",
 ```
 
-## Activity
+#### `activity.activity_type` & `activity.activity_tooltip` 
+
+Awake at day 
 ```json
 "activity.activity_type": "diurnal",  
 "activity.activity_tooltip": "Active during the day"
 ```
 
+Awake at night 
 ```json
 "activity.activity_type": "nocturnal",  
 "activity.activity_tooltip": "Active during the night"
 ```
 
+Sleep depends on external factors that are not day night or dawn 
 ```json
 "activity.activity_type": "cathemeral",  
 "activity.activity_tooltip": "Active randomly throughout the day or based on specific factors"
 ```
 
+Animal does not sleep
 ```json
 "activity.activity_type": "sleepless",  
 "activity.activity_tooltip": "Does not sleep"
 ```
 
+Animal is awake at dusk and/or dawn 
 ```json
 "activity.activity_type": "crepuscular",  
 "activity.activity_tooltip": "Active at dusk or dawn"
 ```
+
+#### `feature_x.item`... 
+See [[#Feature Writing]]
+
+---
+### `unusual_prehistory:mob_entry_features`
+
+See [[#Feature Writing]]
+
+---
+## `unusual_prehistory:mob_entry_text`
+
+#### `text`
+Paragraph that can be [formatted](https://vazkiimods.github.io/Patchouli/docs/patchouli-basics/text-formatting). 
+
+---
+## Feature Writing 
+
+x can be `1`, `2`, `3` or `4` (in the case of [[#`unusual_prehistory mob_entry_features`]])
+#### `feature_x.item`
+Item ID of a Unusual Prehistory 2 or Vanilla MC item that best represents the feature. 
+
+#### `feature_x.tooltip`
+Descriptive blurb about the feature and all relevant uses. Uses minecraft book formatting for text. 
+- Start with `§7` and always switch back to this color after keywords 
+- Use `§a` before keywords, and `§r` after keywords. 
+- Use the [Minecraft Wiki Formatter](https://minecraft.wiki/w/Calculators/Formatting_code_editor) to format with ease
+Example;
+- "`§7After being §apacified§r, §7Carnotaurus will continue to attack most monsters"` will look like
+
+![[formatting.png]]
+
+![[carnotaurus_page_tooltip_2.png]]
+
+#### `feature_x.title_one_line`  & `feature_x.title_two_line`
+Title of the blurb. Keep it concise. If it goes over two lines due to the length, use `two_line` instead of `one_line` 
+### But what features should I document? 
+1. Holocene Mobs require breeding
+2. Special Interactions with the player
+3. Special Interactions with other mobs
+4. Taming
+5. Drops 
+6. Ability to be bucketed
+7. Other Special Behaviours 
+## Renders
+
+![[megalania_render_red.png]]
+
+Location: `unusual_prehistory:textures/gui/paleopedia/images/`
+
+Requirements:
+1. Image size must be **256x256**.
+2. The actual render must fit within the top-left **200x200** area. (Red area above)
+3. Do not crop or cut off the mob.
+4. Use dynamic poses.
+5. For large mobs, position the head closer to the camera (See Brachiosaurus and Aegirocassis renders).
+6. Renders with multiple species or genera in them have numbering. Numbers from 0-9 can be found on the aseprite sheet in the paleopedia texture folder 
 
 %%
 # Future 
