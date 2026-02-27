@@ -278,12 +278,13 @@ Title of the blurb. Keep it concise. If it goes over two lines due to the length
 Location: `unusual_prehistory:textures/gui/paleopedia/images/`
 
 Requirements:
-1. Image size must be **256x256**.
-2. The actual render must fit within the top-left **200x200** area. (Red area above)
-3. Do not crop or cut off the mob.
-4. Use dynamic poses.
-5. For large mobs, position the head closer to the camera (See Brachiosaurus and Aegirocassis renders).
-6. Renders with multiple species or genera in them have numbering. Numbers from 0-9 can be found on the aseprite sheet in the paleopedia texture folder 
+- Image size must be **256x256**.
+- The actual render must fit within the top-left **200x200** area. (Red area above)
+- Do not crop or cut off the mob.
+- Use dynamic poses.
+- For large mobs, position the head closer to the camera (See Brachiosaurus and Aegirocassis renders).
+- Renders with multiple species or genera in them have numbering. 
+	- Numbers from 0-9 can be found on the aseprite sheet in the paleopedia texture folder 
 
 %%
 # Future 
