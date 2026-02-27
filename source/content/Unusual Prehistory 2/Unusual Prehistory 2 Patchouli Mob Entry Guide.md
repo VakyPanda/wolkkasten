@@ -1,5 +1,5 @@
 Hi. You want to write entries for the UP-2 patchouli book. 
-Written by @vakypanda on discord. Ping me for questions. 
+*Written by @vakypanda on discord. Ping/dm me for questions*
 ## Overview
 
 ### Structure
