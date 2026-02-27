@@ -10,7 +10,7 @@ Hi. You want to write entries for the UP-2 patchouli book.
 All entries are located at: 
 `src/main/resources/assets/unusual_prehistory/patchouli_books/paleopedia/en_us/entries/mobs`
 
-It is strongly recommended to clone the indev GitHub repository before editing.  
+It is strongly recommended to clone the in-dev GitHub repository before editing.  
 Editing files separately increases the risk of formatting or ID errors.
 ## Entry JSON
 
@@ -253,8 +253,7 @@ Item ID of a Unusual Prehistory 2 or Vanilla MC item that best represents the fe
 Descriptive blurb about the feature and all relevant uses. Uses minecraft book formatting for text. 
 - Start with `§7` and always switch back to this color after keywords 
 - Use `§a` before keywords, and `§r` after keywords. 
-- Use the [Minecraft Wiki Formatter](https://minecraft.wiki/w/Calculators/Formatting_code_editor) to format with ease
-Example;
+- Use the [Minecraft Wiki Formatter](https://minecraft.wiki/w/Calculators/Formatting_code_editor) to format with ease, Example;
 - "`§7After being §apacified§r, §7Carnotaurus will continue to attack most monsters"` will look like
 
 ![[formatting.png]]
