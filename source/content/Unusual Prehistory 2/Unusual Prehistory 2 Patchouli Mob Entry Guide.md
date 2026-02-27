@@ -1,19 +1,12 @@
-Hi. You want to write entries for the UP2 patchouli book. 
+Hi. You want to write entries for the UP-2 patchouli book. 
 Written by @vakypanda on discord. Ping me for questions. 
 ## Overview
 
-**Entry** - a json file, containing all the information for the specific mob's entry in the book
-**Page** - the page on the book, it has set templates that can be assigned at the highest level of the entry
-**Variables** - the values you will be editing for each given creature
+- **Entry** - a json file, containing all the information for the specific mob's entry in the book
+- **Page** - the page on the book, it has set templates that can be assigned at the highest level of the entry
+- **Variables** - the values you will be editing for each given creature. Some variables have to be left blank in certain cases. You should remove that line entirely.
 
 The guide is to make sure formatting is kept consistent. I've tried to make the process of adding new entries super easy, so the json file youll see for any mob's entry is very short and requires some basic information to be filled.
-
-Some variables have to be left blank in certain cases. Here's what that looks like;
-
-```json
-"empty_variable_of_some_kind": "",  
-```
-
 
 All Entries are located under `src/main/resources/assets/unusual_prehistory/patchouli_books/paleopedia/en_us/entries/mobs`. Best you clone the github repository for the indev update before you start. If not just write the jsons down seperately, but remember that can make it unnecessarily difficult to weed out issues. Optionally get a beta from someone and make a resourcepack (or ask me and ill make it for you) and use that to edit the entries.  
 ## Pages, Entries and Variables
@@ -134,7 +127,6 @@ After this comes
 - When renders are being put in the `unusual_prehistory:textures/gui/paleopedia/images/` folder, there are a few things to remember
 	1. The image must be `256x256` in dimension
 	2. The actual **RENDER** must be WITHIN THE TOP LEFT `200x200` pixels. This is MANDATORY or else your render WILL get cut off;
-
 		![[megalania_render_red.png]]
 		*The red area represents the area the render can actually fit into, which is 200x200 pixels.*
 	3. Try to take renders in a dynamic pose. Since there is a lot of compression at this size, for big mobs (like a sauropod or something like aegirocassis) I'd suggest taking the render such that the head of the mob is quite large and near the camera, while the rest of the mob is in the distance but distorted and smaller. Try to not cut off mobs, it clashes with the style of the entries. 
