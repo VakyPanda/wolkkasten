@@ -9,7 +9,7 @@ Written by @vakypanda on discord. Ping me for questions.
 The guide is to make sure formatting is kept consistent. I've tried to make the process of adding new entries super easy, so the json file youll see for any mob's entry is very short and requires some basic information to be filled.
 
 All Entries are located under `src/main/resources/assets/unusual_prehistory/patchouli_books/paleopedia/en_us/entries/mobs`. Best you clone the github repository for the indev update before you start. If not just write the jsons down seperately, but remember that can make it unnecessarily difficult to weed out issues. Optionally get a beta from someone and make a resourcepack (or ask me and ill make it for you) and use that to edit the entries.  
-## Pages, Entries and Variables
+## Entry JSON
 
 ![[carnotaurus_page.png]]
 
@@ -108,21 +108,21 @@ This is all information for organising and displaying the page within the contex
 	4. `clone.clone_type`, `clone.clone_tooltip_heading` and `clone.clone_tooltip` are a set of values which have fixed formatting and **MUST BE COPIED FROM [HERE](#COPY-AND-PASTE)**. The 'clone' values just mean how the mob is hatched - via egg, embryo, aquatic egg, etc
 	5. The same goes for `activity.activity_type` and `activity.activity_tooltip`, which go over the daily activity of the specific mob (diurnal, nocturnal, etc)
 
-	6. `feature_x.item` where x can be `1`, `2` or `3`. These feature-related variables dictate the little feature blurbs and what they show. `feature_x_item` can contain a vanilla or UP2 item id, grabbed the same way as the fossil and egg items were. The item should be related to what the feature being described is, ideally the item is directly related to the mob and if not it is related by concept or feel. 
-	7. `feature_x.tooltip` should be a descriptive blurb about the feature and all its relevant uses. The entire section is formatted gray and you MUST use `§a` before any key-words or items or mob names - this will highlight the word in *green*. After the key-word, add `§7` to turn the text following it back to gray. Example; "`§7After being §apacified§r, §7Carnotaurus will continue to attack most monsters"`. 
+[[#Feature Writing]] has it's own separate section 
+## Feature Writing 
+
+1. `feature_x.item` where x can be `1`, `2` or `3`. These feature-related variables dictate the little feature blurbs and what they show. `feature_x_item` can contain a vanilla or UP2 item id, grabbed the same way as the fossil and egg items were. The item should be related to what the feature being described is, ideally the item is directly related to the mob and if not it is related by concept or feel. 
+2. `feature_x.tooltip` should be a descriptive blurb about the feature and all its relevant uses. The entire section is formatted gray and you MUST use `§a` before any key-words or items or mob names - this will highlight the word in *green*. After the key-word, add `§7` to turn the text following it back to gray. Example; "`§7After being §apacified§r, §7Carnotaurus will continue to attack most monsters"`. 
 ![[carnotaurus_page_tooltip_1.png]]
 ![[carnotaurus_page_tooltip_2.png]]
-	8. `feature_x.one_line` this is the 'title' of the blurb - its short and punchy. Can be monotone if you want - "Breeding" for example. Up to you. 
-	9. `feature_x.two_line` the difference between this and the above is simply splitting the title into two lines instead of one. If you find your `one_line` title is getting too long and being automatically moved to the next line, move your title here and leave `one_line` empty. This is because the `two_line` title has specific alignment to make it look good.
-		1. [[#But what features should I document?]]
 
-3. `unusual_prehistory:mob_entry_features` is a unique type of page that has 4 additional feature slots, much like the page type above. Use it if the mob has more than 3 features
-4. `unusual_prehistory:mob_entry_text` is a unique type of page that allows you to write a whole paragraph. *We should soon write blurbs about the real animal using this page, allowing players to learn more about the animal using the in-game guide...*
+3. `feature_x.one_line` this is the 'title' of the blurb - its short and punchy. Can be monotone if you want - "Breeding" for example. Up to you. 
+4. `feature_x.two_line` the difference between this and the above is simply splitting the title into two lines instead of one. If you find your `one_line` title is getting too long and being automatically moved to the next line, move your title here and leave `one_line` empty. This is because the `two_line` title has specific alignment to make it look good. [[#But what features should I document?]]
 #### But what features should I document? 
 1. Breeding is an important one - Holocene mobs have it
 2. Drops or interactions 
 3. Special Behaviours 
-#### On Renders
+## On Renders
 - When renders are being put in the `unusual_prehistory:textures/gui/paleopedia/images/` folder, there are a few things to remember
 	1. The image must be `256x256` in dimension
 	2. The actual **RENDER** must be WITHIN THE TOP LEFT `200x200` pixels. This is MANDATORY or else your render WILL get cut off;
@@ -131,8 +131,8 @@ This is all information for organising and displaying the page within the contex
 	3. Try to take renders in a dynamic pose. Since there is a lot of compression at this size, for big mobs (like a sauropod or something like aegirocassis) I'd suggest taking the render such that the head of the mob is quite large and near the camera, while the rest of the mob is in the distance but distorted and smaller. Try to not cut off mobs, it clashes with the style of the entries. 
 	4. some mobs have species variants ( eg; Lobe finned fish ). Look at their render in [the GitHub Assets](https://github.com/platypushasnohat/Unusual-Prehistory-2/tree/main/src/main/resources/assets/unusual_prehistory/textures/gui/paleopedia) if you have access to those - theyre numbered! These "numbers" go in the `variant_key` section of the entry. 
 
-#### Copy-And-Paste 
-#### Cloning 
+# Copy-And-Paste 
+## Cloning 
 Placeable Egg (mostly for reptiles and non-avian dinosaurs)
 ```json
 "clone.clone_type": "nest_egg",  
@@ -168,7 +168,7 @@ Embryo (mostly for mammals)
 "clone.clone_tooltip": "Embryo must be placed in §aLiving Ooze§r §7to gestate",
 ```
 
-#### Activity
+## Activity
 ```json
 "activity.activity_type": "diurnal",  
 "activity.activity_tooltip": "Active during the day"
