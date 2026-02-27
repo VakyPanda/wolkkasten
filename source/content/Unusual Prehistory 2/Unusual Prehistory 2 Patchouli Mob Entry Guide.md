@@ -108,13 +108,12 @@ This is all information for organising and displaying the page within the contex
 	4. `clone.clone_type`, `clone.clone_tooltip_heading` and `clone.clone_tooltip` are a set of values which have fixed formatting and **MUST BE COPIED FROM [HERE](#COPY-AND-PASTE)**. The 'clone' values just mean how the mob is hatched - via egg, embryo, aquatic egg, etc
 	5. The same goes for `activity.activity_type` and `activity.activity_tooltip`, which go over the daily activity of the specific mob (diurnal, nocturnal, etc)
 
-After this comes 
-	5. `feature_x.item` where x can be `1`, `2` or `3`. These feature-related variables dictate the little feature blurbs and what they show. `feature_x_item` can contain a vanilla or UP2 item id, grabbed the same way as the fossil and egg items were. The item should be related to what the feature being described is, ideally the item is directly related to the mob and if not it is related by concept or feel. 
-	6. `feature_x.tooltip` should be a descriptive blurb about the feature and all its relevant uses. The entire section is formatted gray and you MUST use `§a` before any key-words or items or mob names - this will highlight the word in *green*. After the key-word, add `§7` to turn the text following it back to gray. Example; "`§7After being §apacified§r, §7Carnotaurus will continue to attack most monsters"`. 
+	6. `feature_x.item` where x can be `1`, `2` or `3`. These feature-related variables dictate the little feature blurbs and what they show. `feature_x_item` can contain a vanilla or UP2 item id, grabbed the same way as the fossil and egg items were. The item should be related to what the feature being described is, ideally the item is directly related to the mob and if not it is related by concept or feel. 
+	7. `feature_x.tooltip` should be a descriptive blurb about the feature and all its relevant uses. The entire section is formatted gray and you MUST use `§a` before any key-words or items or mob names - this will highlight the word in *green*. After the key-word, add `§7` to turn the text following it back to gray. Example; "`§7After being §apacified§r, §7Carnotaurus will continue to attack most monsters"`. 
 ![[carnotaurus_page_tooltip_1.png]]
 ![[carnotaurus_page_tooltip_2.png]]
-	7. `feature_x.one_line` this is the 'title' of the blurb - its short and punchy. Can be monotone if you want - "Breeding" for example. Up to you. 
-	8. `feature_x.two_line` the difference between this and the above is simply splitting the title into two lines instead of one. If you find your `one_line` title is getting too long and being automatically moved to the next line, move your title here and leave `one_line` empty. This is because the `two_line` title has specific alignment to make it look good.
+	8. `feature_x.one_line` this is the 'title' of the blurb - its short and punchy. Can be monotone if you want - "Breeding" for example. Up to you. 
+	9. `feature_x.two_line` the difference between this and the above is simply splitting the title into two lines instead of one. If you find your `one_line` title is getting too long and being automatically moved to the next line, move your title here and leave `one_line` empty. This is because the `two_line` title has specific alignment to make it look good.
 		1. [[#But what features should I document?]]
 
 3. `unusual_prehistory:mob_entry_features` is a unique type of page that has 4 additional feature slots, much like the page type above. Use it if the mob has more than 3 features
