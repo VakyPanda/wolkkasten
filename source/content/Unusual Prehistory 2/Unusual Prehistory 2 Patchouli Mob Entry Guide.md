@@ -237,7 +237,7 @@ See [[#Feature Writing]]
 See [[#Feature Writing]]
 
 ---
-## `unusual_prehistory:mob_entry_text`
+### `unusual_prehistory:mob_entry_text`
 
 #### `text`
 Paragraph that can be [formatted](https://vazkiimods.github.io/Patchouli/docs/patchouli-basics/text-formatting). 
