@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Unusual Prehistory 2 Patchouli Mob Entry Guide"
             }
+          },
+          {
+            "id": "5261beac6361d1fb",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.12.4"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,7 +183,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4cf49f11d9dbca7a",
+  "active": "5261beac6361d1fb",
   "lastOpenFiles": [
     "Unusual Prehistory 2/index.md",
     "Unusual Prehistory 2/formatting.png",
