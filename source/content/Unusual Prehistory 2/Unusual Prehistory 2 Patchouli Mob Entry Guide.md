@@ -36,9 +36,10 @@ Editing files separately increases the risk of formatting or ID errors.
       "fossil_item": "unusual_prehistory:fury_fossil",  
       "egg_item": "unusual_prehistory:carnotaurus_egg",  
       "variant_key": "",  
-      "image_tooltip": "Late Cretaceous abelisaur with a short, deep skull and a massive pair of horns that give it its name"  
+      "image_tooltip": "An abelisaur with a short, deep skull and massive pair of horns, Carnotaurus furiously charges at anything it sets its sights on in a blind, rage-fuelled stampede."  
     },  
     {  
+      "id": "carnotaurus",  
       "type": "unusual_prehistory:mob_entry_2",  
   
       "era_image": "late_cretaceous",  
@@ -58,8 +59,8 @@ Editing files separately increases the risk of formatting or ID errors.
       "feature_1.title_one_line": "Furious",  
       "feature_1.title_two_line": "",  
   
-      "feature_2.item": "minecraft:golden_apple",  
-      "feature_2.tooltip": "§7After being §apacified§r, §7Carnotaurus will continue to attack most monsters",  
+      "feature_2.item": "tag:unusual_prehistory:permanently_pacifies_mob",  
+      "feature_2.tooltip": "§7After being §apacified§7, Carnotaurus will continue to attack most monsters",  
       "feature_2.title_one_line": "Bodyguard!",  
       "feature_2.title_two_line": ""  
     }  
@@ -128,6 +129,9 @@ Part of the image tooltip, for mobs with variants that are based on species or g
 
 ---
 ### `unusual_prehistory:mob_entry_2
+
+#### `id` 
+id of the mob, without `unusual_prehistory:` prefix. Example; `unusual_prehistory:lobe_finned_fish` -> `lobe_finned_fish`
 #### `era_image`
 Has to be prefixed with `early_`, `mid_` or `late_`, Eg; `late_cretaceous`, `early_cenozoic`, `mid_ordovician`
 Valid eras are;
@@ -158,6 +162,7 @@ Valid values are
 - `hostile`
 - `passive`
 - `neutral`
+- `boss`
 
 #### `clone.clone_type`, `clone.clone_tooltip` & `clone.clone_tooltip_heading`
 
@@ -263,25 +268,50 @@ Descriptive blurb about the feature and all relevant uses. Uses minecraft book f
 #### `feature_x.title_one_line`  & `feature_x.title_two_line`
 Title of the blurb. Keep it concise. If it goes over two lines due to the length, use `two_line` instead of `one_line` 
 ### But what features should I document? 
-1. Holocene Mobs require breeding
-2. Special Interactions with the player
-3. Special Interactions with other mobs
-4. Taming
-5. Drops 
-6. Ability to be bucketed
-7. Other Special Behaviours 
+
+One small rule - start every feature entry with the mobs name. Or most of them at-least, where applicable. So `Kentrosaurus did this and that...` or `Carnotaurus was this or that...`
+
+The following are examples of features that must/can be included, based on the mob. The wording for some features is standard - make sure you keep it the same across entries.
+
+- Holocene Artifact 
+```json
+"The artifact used to revive [MOBNAME] is found in/can be obtained by §a[MECHANIC/PLACE/MOB/STRUCTURE]§7"
+```
+- Holocene Mobs require Breeding feature 
+```json
+"Being recently-extinct, [MOBNAME] are able to breed after being fed §a[ITEM]§7"
+```
+- Breeding or general reproduction mechanics ( even cloning, like with Praepusa )
+```json
+"[MOBNAME] may be bred using §a[ITEM]§7"
+```
+- Taming
+```json
+"[MOBNAME] can be tamed using §a[TAME ITEM/S]§7; tamed [MOBNAME] can [...]/be saddled/be saddled and mounted/be mounted/be commanded to attack/etc."
+```
+- Ability to be bucketed
+```json
+"[MOBNAME] can be collected and transported using a §aWater Bucket§7"
+```
+- Drops 
+- Special Interactions with the player
+- Special Interactions with other mobs
+- Other Special Behaviours 
 ## Renders
 
 ![[megalania_render_red.png]]
 
 Location: `unusual_prehistory:textures/gui/paleopedia/images/`
 
+*note for add-on makers - the render should be included under `assets/unusual_prehistory/textures/gui/paleopedia/images`, even in your add-on's resources*
+
 Requirements:
 - Image size must be **256x256**.
 - The actual render must fit within the top-left **200x200** area. (Red area above)
 - Do not crop or cut off the mob.
 - Use dynamic poses.
-- For large mobs, position the head closer to the camera (See Brachiosaurus and Aegirocassis renders).
+- For large mobs, position the head closer to the camera (See Brachiosaurus, Mosasaurus and Aegirocassis renders).
+	- Scale using bilinear scaling if possible
 - Renders with multiple species or genera in them have numbering. 
 	- Numbers from 0-9 can be found on the aseprite sheet in the paleopedia texture folder 
 
