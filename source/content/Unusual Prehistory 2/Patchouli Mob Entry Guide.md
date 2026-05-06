@@ -261,7 +261,7 @@ Descriptive blurb about the feature and all relevant uses. Uses minecraft book f
 - Use the [Minecraft Wiki Formatter](https://minecraft.wiki/w/Calculators/Formatting_code_editor) to format with ease, Example;
 - "`§7After being §apacified§r, §7Carnotaurus will continue to attack most monsters"` will look like
 
-![[formatting.png]]
+![[formatting.png|500]]
 
 ![[carnotaurus_page_tooltip_2.png]]
 
