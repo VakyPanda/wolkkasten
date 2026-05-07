@@ -23,9 +23,20 @@ A few things to remember when texturing items:
 - Get the shape down before you start colors. Use a predefined palette, like I’m doing here. It helps to get the shape down before deciding on colors.
 - Use 6–8 colors, but this is not a hard rule. Just make sure it looks good.
 - Repeat of the latter; make sure it looks good. That’s what matters. These are just guidelines for you to follow to replicate a similar style to what me and Crydigo have done for a lot of the fossils.
+#### **Isometric Perspectives**
 - For the first shape, try to follow an isometric shape. A base fossil shape made of cubes in an isometric view can help. Some resources for general pixel art stuff + isometric views:
     - Isometric views here: [https://saint11.art/](https://saint11.art/)
     - Other: [https://pixeljoint.com/forum/forum_posts.asp?TID=11299](https://pixeljoint.com/forum/forum_posts.asp?TID=11299)
+    - Isobox script for aseprite, to automate generating isometric boxes https://github.com/darkwark/isobox-for-aseprite/tree/master
+- Notice how isometric shapes can build a base for you to work off of, especially with dynamic fossils like the skull fossils. It does a lot of heavy lifting for the perspective of the items. 
+
+	![[Pasted image 20260507073945.png]]
+
+- Some fossils arent as straightforward, and are 'carved' into the box, but the same principle holds, just with an isometric box as a base: 
+
+	![[Pasted image 20260507074122.png]]
+
+#### **Hynerpeton Fossil Walkthrough**
 
 ![[fossilup2guide-1778092828224.png]]
 
@@ -38,3 +49,4 @@ However, you can go for many different options when doing these fossils. Here ar
 Finally, here are the colors. I decided to go for a sulfur + gunpowder color instead, since sulfur provides a more unique color and mineral. Remember to color your fossil like it’s a real stone made of real minerals.
 
 ![[fossilup2guide-1778094809637.png]]
+
