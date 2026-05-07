@@ -32,11 +32,11 @@ A few things to remember when texturing items:
 
 - Notice how isometric shapes can build a base for you to work off of, especially with dynamic fossils like the skull fossils. It does a lot of heavy lifting for the perspective of the items. 
 
-	![[Pasted image 20260507073945.png]]
+	![[fossilsup2guide-00.png]]
 
 - Some fossils are not as straightforward, and are 'carved' into the box, but the same principle holds, just with an isometric box as a base: 
 
-	![[Pasted image 20260507074122.png]]
+	![[fossilsup2guide-11.png]]
 
 *\*Some of these sprites do not actually use full isometric view, but isometric view is probably the best way to get used to this sort of perspective, especially when coming into perspective completely blind - this is because its a straightforward formula to set up the base shape.* 
 #### **Hynerpeton Fossil Walkthrough**

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1644a5aa811ffc95",
+        "id": "d34259fc952bcfb8",
         "type": "tabs",
         "children": [
           {
-            "id": "4cf49f11d9dbca7a",
+            "id": "feff925a2d2d167d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -170,12 +170,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4cf49f11d9dbca7a",
+  "active": "feff925a2d2d167d",
   "lastOpenFiles": [
-    "Pasted image 20260507074122.png",
-    "Pasted image 20260507073945.png",
-    "Unusual Prehistory 2/Patchouli Mob Entry Guide.md",
+    "Unusual Prehistory 2/fossilsup2guide-11.png",
+    "Unusual Prehistory 2/fossilsup2guide-00.png",
     "Unusual Prehistory 2/Fossil Texture Guide.md",
+    "Unusual Prehistory 2/Patchouli Mob Entry Guide.md",
     "Unusual Prehistory 2/fossilup2guide-1778094809637.png",
     "Unusual Prehistory 2/fossilup2guide-1778093036003.png",
     "Unusual Prehistory 2/fossilup2guide-1778092917300.png",
@@ -185,7 +185,6 @@
     "Unusual Prehistory 2/index.md",
     "Unusual Prehistory 2/formatting.png",
     "Unusual Prehistory 2/megalania_render_red.png",
-    "Unusual Prehistory 2/carnotaurus_page_tooltip_1.png",
     "index.md",
     "sync.md",
     "Unusual Prehistory 2"
