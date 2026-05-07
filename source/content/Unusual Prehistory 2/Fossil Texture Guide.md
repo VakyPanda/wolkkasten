@@ -23,19 +23,22 @@ A few things to remember when texturing items:
 - Get the shape down before you start colors. Use a predefined palette, like I’m doing here. It helps to get the shape down before deciding on colors.
 - Use 6–8 colors, but this is not a hard rule. Just make sure it looks good.
 - Repeat of the latter; make sure it looks good. That’s what matters. These are just guidelines for you to follow to replicate a similar style to what me and Crydigo have done for a lot of the fossils.
-#### **Isometric Perspectives**
+#### **Isometric Perspectives****
 - For the first shape, try to follow an isometric shape. A base fossil shape made of cubes in an isometric view can help. Some resources for general pixel art stuff + isometric views:
     - Isometric views here: [https://saint11.art/](https://saint11.art/)
+	    - https://saint11.art/img/pixel-tutorials/Isometric.gif
     - Other: [https://pixeljoint.com/forum/forum_posts.asp?TID=11299](https://pixeljoint.com/forum/forum_posts.asp?TID=11299)
     - Isobox script for aseprite, to automate generating isometric boxes https://github.com/darkwark/isobox-for-aseprite/tree/master
+
 - Notice how isometric shapes can build a base for you to work off of, especially with dynamic fossils like the skull fossils. It does a lot of heavy lifting for the perspective of the items. 
 
 	![[Pasted image 20260507073945.png]]
 
-- Some fossils arent as straightforward, and are 'carved' into the box, but the same principle holds, just with an isometric box as a base: 
+- Some fossils are not as straightforward, and are 'carved' into the box, but the same principle holds, just with an isometric box as a base: 
 
 	![[Pasted image 20260507074122.png]]
 
+*\*Some of these sprites do not actually use full isometric view, but isometric view is probably the best way to get used to this sort of perspective, especially when coming into perspective completely blind - this is because its a straightforward formula to set up the base shape.* 
 #### **Hynerpeton Fossil Walkthrough**
 
 ![[fossilup2guide-1778092828224.png]]
