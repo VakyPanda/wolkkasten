@@ -1,4 +1,6 @@
 {
   "cssTheme": "Primary",
-  "theme": "moonstone"
+  "theme": "moonstone",
+  "accentColor": "",
+  "showRibbon": true
 }
